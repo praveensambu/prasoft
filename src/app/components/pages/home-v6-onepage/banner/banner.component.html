@@ -1,0 +1,28 @@
+<section class="banner-section-three" [style.background-image]="'url(assets/img/banner/banner-03.jpg)'">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="banner-content text-center">
+                    <span class="title-tag wow fadeInDown" data-wow-delay="0.3s">Get Quality Item & Goods</span>
+                    <h1 class="title wow fadeInLeft" data-wow-delay="0.5s">IT Solutions</h1>
+                    <p class="wow fadeInUp" data-wow-delay="0.7s">Make your products with good & professionals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner-shapes">
+        <img class="shape-one" src="assets/img/banner/banner-shape-1.png" alt="img">
+        <img class="shape-two" src="assets/img/banner/banner-shape-2.png" alt="img">
+    </div>
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="brand-slider row">
+        <!-- Data --> 
+        <div ngxSlickItem class="col" *ngFor="let item of brands">
+            <div class="brand-item">
+                <a href="#">
+                    <img [src]="item.lightimg" [alt]="item.title">
+                </a>
+            </div>
+        </div>
+        <!-- Data -->
+    </ngx-slick-carousel>
+</section>

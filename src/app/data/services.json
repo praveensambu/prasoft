@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "img":"assets/img/service-img/07.jpg",
+        "icon":"fal fa-eye-dropper",
+        "title":"STAFFING",
+        "shortdesc":""
+    },
+    {
+        "id":2,
+        "img":"assets/img/service-img/08.jpg",
+        "icon":"fal fa-gavel",
+        "title":"IT Consultancy",
+        "shortdesc":" "
+    },
+    {
+        "id":3,
+        "img":"assets/img/service-img/09.jpg",
+        "icon":"fal fa-map-marked-alt",
+        "title":"Technology",
+        "shortdesc":""
+    },
+    {
+        "id":4,
+        "img":"assets/img/service-img/10.jpg",
+        "icon":"fal fa-hurricane",
+        "title":"App Development",
+        "shortdesc":""
+    },
+    {
+        "id":5,
+        "img":"assets/img/service-img/11.jpg",
+        "icon":"fal fa-bezier-curve",
+        "title":"Cloud Technology",
+        "shortdesc":""
+    },
+    {
+        "id":6,
+        "img":"assets/img/service-img/12.jpg",
+        "icon":"fal fa-umbrella",
+        "title":"DATA & BUSINESS INTELLIGENCE",
+        "shortdesc":""
+    }
+]

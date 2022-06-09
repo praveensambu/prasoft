@@ -1,0 +1,34 @@
+<section class="latest-news-area soft-blue-bg section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title text-center mb-50">
+                    <span>latest news</span>
+                    <h2 class="title">Read Our Latest News & Blog</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="latest-news-white-box">
+        <div class="container">
+            <div class="row">
+                <!-- Dtaa -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s"
+                    *ngFor="let item of blogblock | slice:0:3">
+                    <div class="latest-news-box-two mt-30">
+                        <ul class="post-meta">
+                            <li *ngFor="let user of getAuthor(item.author)"><a routerLink="/blog/author/{{user.id}}">By
+                                    {{user.name}},</a></li>
+                            <li><a routerLink="/blog-details/{{item.id}}">{{item.postdate}}</a></li>
+                        </ul>
+                        <h4 class="title"><a routerLink="/blog-details/{{item.id}}">{{item.title | slice:0:35}}</a></h4>
+                        <p>{{item.shortdesc | slice:0:110}}...</p>
+                        <a routerLink="/blog-details/{{item.id}}" class="news-btn">Read More <i
+                                class="fal fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Dtaa -->
+            </div>
+        </div>
+    </div>
+</section>

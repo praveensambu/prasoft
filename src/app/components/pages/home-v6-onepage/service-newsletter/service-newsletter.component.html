@@ -1,0 +1,27 @@
+<div class="row service-items justify-content-center">
+    <!-- Data -->
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s"
+        *ngFor="let item of services | slice:0:2;let i = index">
+        <div class="service-item-seven mt-30">
+            <div class="icon">
+                <i [class]="item.icon"></i>
+            </div>
+            <h4 class="title">{{item.title}}</h4>
+            <p>{{item.shortdesc | slice:0:85}}</p>
+            <a routerLink="/service-details" class="service-link"><i class="fal fa-angle-right"></i> Read More</a>
+        </div>
+    </div>
+    <!-- Data -->
+    <div class="col-lg-4 col-md-10 wow fadeInRight" data-wow-delay="0.7s">
+        <div class="features-sub mt-30">
+            <h5 class="title">Subscribe Now</h5>
+            <p>Many aspects of computing and technology and the term is more recognizable than before.</p>
+            <form>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your email....">
+                    <button>Subscribe Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

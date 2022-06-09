@@ -1,0 +1,86 @@
+<section class="conatct-section section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title white-color text-center mb-60">
+                    <span class="title-tag">contact us</span>
+                    <h2 class="title">Join Us To Get Free Consultations</h2>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-area wow fadeInUp" data-wow-delay="0.3s">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-thumb mb-md-gap-50">
+                        <img src="assets/img/contact-man.jpg" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                            <h3 class="form-title">Don't Hesitate To Contact With Us, Say Hello......</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="input-group mt-30">
+                                        <input type="text" placeholder="Full Name Here" name="name"
+                                            [(ngModel)]="model.name" required>
+                                        <span class="icon"><i class="fal fa-user"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-group mt-30">
+                                        <input type="email" placeholder="Email Here" name="email"
+                                            [(ngModel)]="model.email" required>
+                                        <span class="icon"><i class="fal fa-envelope-open"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-group mt-30">
+                                        <input type="text" placeholder="Phone No" name="phone" [(ngModel)]="model.phone"
+                                            required>
+                                        <span class="icon"><i class="fal fa-phone"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-group mt-30">
+                                        <input type="text" placeholder="Subject" name="subject"
+                                            [(ngModel)]="model.subject" required>
+                                        <span class="icon"><i class="fal fa-edit"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-group textarea-group mt-30">
+                                        <textarea placeholder="Message Us" name="message" [(ngModel)]="model.message"
+                                            required></textarea>
+                                        <span class="icon"><i class="fal fa-pencil"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-group textarea-group mt-30">
+                                        <button type="submit" class="main-btn small-size rounded-btn icon-right">Send
+                                            Message <i class="fal fa-long-arrow-right"></i></button>
+                                    </div>
+                                    <!-- Form Messages -->
+                                    <div class="service-error mt-4 w-100" *ngIf="error">
+                                        <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">
+                                            <strong>Oops!</strong> Something bad happened. Please try again later.
+                                        </ngb-alert>
+                                    </div>
+                                    <div [hidden]="!submitted" class="contact-message w-100 mt-4">
+                                        <div *ngIf="model.id" class="contact-success w-100">
+                                            <ngb-alert type="success" class="mb-0 w-100" [dismissible]="false">
+                                                <strong>Success!</strong> Contact form has been successfully submitted.
+                                            </ngb-alert>
+                                        </div>
+                                    </div>
+                                    <!-- Form Messages -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="conatct-one-bg" [style.background-image]="'url(assets/img/contact-bg.jpg)'"></div>
+</section>

@@ -1,0 +1,36 @@
+<section class="service-section service-with-shape-two section-gap">
+    <div class="square-shape"></div>
+    <div class="square-shape-two"></div>
+    <div class="container">
+        <div class="section-title white-color text-center mb-10">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-9">
+                    <span class="title-tag">Our latest services</span>
+                    <h2 class="title">We Offer Better Soluation For Your IT Business</h2>
+                </div>
+            </div>
+            <div class="ring-shape"></div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Data -->
+            <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInRight" data-wow-delay="0.3s" *ngFor="let item of serviceblock | slice:0:3">
+                <div class="service-item-four no-border mt-50">
+                    <div class="services-thumb">
+                        <img [src]="item.img" [alt]="item.title">
+                    </div>
+                    <div class="services-content">
+                        <div class="icon">
+                            <i [class]="item.icon"></i>
+                        </div>
+                        <h4 class="title">{{item.title}}</h4>
+                        <p>{{item.shortdesc | slice:0:140}}</p>
+                        <a routerLink="/service-details" class="service-link">
+                            Read More <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

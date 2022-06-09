@@ -1,0 +1,15 @@
+<section class="brand-section pt-80 pb-80 soft-blue-bg">
+    <div class="container">
+        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="brand-slider row">
+            <!-- Data -->
+            <div ngxSlickItem class="col" *ngFor="let item of brands">
+                <div class="brand-item full-opacity">
+                    <a href="#">
+                        <img [src]="item.lightimg" [alt]="item.title">
+                    </a>
+                </div>
+            </div>
+            <!-- Data -->
+        </ngx-slick-carousel>
+    </div>
+</section>

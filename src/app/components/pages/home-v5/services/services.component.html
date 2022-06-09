@@ -1,0 +1,24 @@
+<section class="service-section section-gap">
+    <div class="container">
+        <div class="section-title-two text-center mb-50">
+            <span class="title-tag">Services</span>
+            <h2 class="title">What We Do</h2>
+            <span class="big-text">Services</span>
+        </div>
+        <div class="row service-items justify-content-center">
+            <!-- Data -->
+            <div class="col-lg-4 col-md-6 col-sm-10 wow fadeInRight" data-wow-delay="0.7s" *ngFor="let item of services | slice:0:3;let i = index">
+                <div class="service-item-six text-center mt-30">
+                    <div class="icon">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <h4 class="title">{{item.title}}</h4>
+                    <p>{{item.shortdesc | slice:0:85}}</p>
+                    <a routerLink="/service-details" class="service-link"><i class="fal fa-angle-right"></i> Read More</a>
+                    <span class="count">0{{i+1}}</span>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

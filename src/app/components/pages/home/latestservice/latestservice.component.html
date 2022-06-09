@@ -1,0 +1,21 @@
+<section class="service-section-two section-gap">
+    <div class="container">
+        <div class="section-title text-center mb-30 wow fadeInUp" data-wow-delay="0.3s">
+            <span class="title-tag">OUR LATEST SERVICES</span>
+            <h2 class="title">We Offer Better Soluation <br> For Your IT Business</h2>
+        </div>
+        <div class="row service-items justify-content-center">
+            <!-- Data -->
+            <div class="col-lg-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.8s" *ngFor="let item of serviceblock | slice:0:6;let i = index">
+                <div class="service-item-two color-{{1+i}} mt-30">
+                    <div class="icon">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <h3 class="title"><a routerLink="/service-details">{{item.title}}</a></h3>
+                    <p>{{item.shortdesc | slice:0:140}}</p>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

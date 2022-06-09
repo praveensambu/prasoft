@@ -1,0 +1,30 @@
+<section class="team-area section-gap-top pb-90 overflow-hidden">
+    <div class="container">
+        <div class="section-title text-center mb-60">
+            <span class="title-tag">Our Team Member</span>
+            <h2 class="title">Meet Our Exclusive <br> Leadership</h2>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="row team-members team-slider">
+            <!-- Data -->
+            <div ngxSlickItem class="col" *ngFor="let item of teamblock">
+                <div class="team-member mb-30">
+                    <div class="member-photo">
+                        <img [src]="item.img" [alt]="item.name" class="w-100">
+                        <div class="social-icon">
+                            <a routerLink="{{item.url}}" *ngFor="let item of item.social">
+                                <i [class]="item.icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h5 class="name"><a routerLink="/team-details/{{item.id}}">{{item.name}}</a></h5>
+                        <span class="position">{{item.post}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Data -->
+        </ngx-slick-carousel>
+    </div>
+</section>

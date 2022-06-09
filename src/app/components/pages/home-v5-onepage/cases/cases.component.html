@@ -1,0 +1,28 @@
+<section class="portfolio-area portfolio-mt-negative">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8">
+                <div class="section-title-two text-center white-color mb-60">
+                    <span class="title-tag">Portfolio</span>
+                    <h2 class="title">We Have Done So Much Stuffs </h2>
+                </div>
+            </div>
+        </div>
+        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="portfolio-items portfolio-slider-three row">
+            <!-- Data -->
+            <div ngxSlickItem class="col-auto" *ngFor="let item of case">
+                <div class="portfolio-item-two mb-30">
+                    <div class="portfolio-img" [style.background-image]="'url('+item.img+')'"> </div>
+                    <div class="portfolio-content">
+                        <span class="category" *ngFor="let category of getCategory(item.category) | slice:0:1">{{category.title}}</span>
+                        <h5 class="title"><a routerLink="/case-details/{{item.id}}">{{item.title}} </a></h5>
+                        <p>
+                            {{item.shortdesc | slice:0:100}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Data -->
+        </ngx-slick-carousel>
+    </div>
+</section>

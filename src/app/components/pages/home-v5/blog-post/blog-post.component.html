@@ -1,0 +1,24 @@
+<section class="latest-news-section section-gap">
+    <div class="container">
+        <div class="section-title-two text-center mb-50">
+            <span class="title-tag">BLOG</span>
+            <h2 class="title">News Feeds</h2>
+            <span class="big-text">News</span>
+        </div>
+        <div class="row latest-news-boxes">
+            <!-- Data -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" *ngFor="let item of blogblock | slice:0:3">
+                <div class="latest-news-box-four mt-30">
+                    <ul class="meta">
+                        <li *ngFor="let author of getAuthor(item.author)"><i class="fal fa-user"></i> By {{author.name}}</li>
+                        <li><i class="fal fa-comments"></i> {{item.reviews.length}} Comments</li>
+                    </ul>
+                    <h4 class="title"><a routerLink="/blog-details/{{item.id}}">{{item.title | slice:0:45}}</a></h4>
+                    <p>{{item.shortdesc | slice:0:110}}...</p>
+                    <a routerLink="/blog-details/{{item.id}}" class="news-link"><i class="fal fa-angle-right"></i> Read More</a>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

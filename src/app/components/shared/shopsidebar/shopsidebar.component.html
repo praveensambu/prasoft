@@ -1,0 +1,34 @@
+<div class="shop-sidebar">
+    <div class="shop-widget nav-widget">
+        <h5 class="widget-title">Category</h5>
+        <ul class="nav-menu">
+            <!-- Data -->
+            <li *ngFor="let item of shopcategory">
+                <a routerLink="/shop/cat/{{item.id}}"><i class="fal fa-angle-right"></i>{{item.title}}</a>
+            </li>
+            <!-- Data -->
+        </ul>
+    </div>
+    <div class="shop-widget tag-widget">
+        <h5 class="widget-title">Keyword</h5>
+        <ul>
+            <!-- Data -->
+            <li *ngFor="let item of shoptags">
+                <a routerLink="/shop/tag/{{item.id}}">{{item.title}}</a>
+            </li>
+            <!-- Data -->
+        </ul>
+    </div>
+    <div class="shop-widget subscribe-widget">
+        <h5 class="widget-title">Subscribe</h5>
+        <p>Lorem ipsum dolor sit asecte is tur adipisicing elit.</p>
+        <form>
+            <input type="text" placeholder="Enter email">
+            <button>Subscribe Now</button>
+        </form>
+    </div>
+    <div class="shop-widget ad-widget">
+        <img src="assets/img/sidebar/sidebar-ad.jpg" alt="img">
+        <a href="#">Add Banner</a>
+    </div>
+</div>

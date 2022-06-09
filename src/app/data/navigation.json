@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "linkText": "Home",
+         "submenu": [
+            {
+                "id": 1.1,
+                "link": "/",
+                "linkText": "Home v1"
+            },
+            {
+                "id": 1.2,
+                "link": "/home-v2",
+                "linkText": "Home v2"
+            },
+            {
+                "id": 1.3,
+                "link": "/home-v3",
+                "linkText": "Home v3"
+            },
+            {
+                "id": 1.4,
+                "link": "/home-v4",
+                "linkText": "Home v4"
+            },
+            {
+                "id": 1.5,
+                "link": "/home-v5",
+                "linkText": "Home v5"
+            },
+            {
+                "id": 1.6,
+                "link": "/home-v6",
+                "linkText": "Home v6"
+            },
+            {
+                "id": 1.7,
+                "linkText": "Onepage",
+                "child": true,
+                "submenu": [
+                    {
+                        "id": 1.71,
+                        "link": "/home-onepage",
+                        "linkText": "Home v1"
+                    },
+                    {
+                        "id": 1.72,
+                        "link": "/home-v2-onepage",
+                        "linkText": "Home v2"
+                    },
+                    {
+                        "id": 1.73,
+                        "link": "/home-v3-onepage",
+                        "linkText": "Home v3"
+                    },
+                    {
+                        "id": 1.74,
+                        "link": "/home-v4-onepage",
+                        "linkText": "Home v4"
+                    },
+                    {
+                        "id": 1.75,
+                        "link": "/home-v5-onepage",
+                        "linkText": "Home v5"
+                    },
+                    {
+                        "id": 1.76,
+                        "link": "/home-v6-onepage",
+                        "linkText": "Home v6"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "link": "/about",
+        "linkText": "About"
+    },
+    {
+        "id": 3,
+        "link": "/services",
+        "linkText": "Services"
+    },
+    {
+        "id": 6,
+        "link": "/contact",
+        "linkText": "Contact"
+    }
+]

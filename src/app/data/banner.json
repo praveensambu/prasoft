@@ -1,0 +1,26 @@
+[
+  {
+    "img": "assets/img/banner/banner-img.png",
+    "bgimg": "assets/img/banner/banner-01.jpg",
+    "bgimgtwo":"assets/img/banner/banner-04.jpg",
+    "subtitle": "IT Business Consulting",
+    "title": "Best IT Solutions Provider Agency",
+    "text": ""
+  },
+  {
+    "img": "assets/img/banner/banner-img.png",
+    "bgimg": "assets/img/banner/banner-02.jpg",
+    "bgimgtwo":"assets/img/banner/banner-05.jpg",
+    "subtitle": "IT Business Consulting",
+    "title": "Best IT Solutions Provider Agency",
+    "text": ""
+  },
+  {
+    "img": "assets/img/banner/banner-img.png",
+    "bgimg": "assets/img/banner/banner-03.jpg",
+    "bgimgtwo":"assets/img/banner/banner-06.jpg",
+    "subtitle": "IT Business Consulting",
+    "title": "Best IT Solutions Provider Agency",
+    "text": ""
+  }
+]

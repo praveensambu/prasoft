@@ -1,0 +1,21 @@
+<section class="service-section section-gap">
+    <div class="container">
+        <div class="section-title text-center mb-30">
+            <span class="title-tag">SERVICES</span>
+            <h2 class="title">What We Do</h2>
+        </div>
+        <div class="row service-items">
+            <!-- Data -->
+            <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.9s" *ngFor="let item of serviceblock | slice:0:4;let i = index">
+                <div class="service-item color-{{1+i}} text-center mt-30">
+                    <div class="icon">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <h5 class="title"><a routerLink="/service-details">{{item.title}}</a></h5>
+                    <p>{{item.shortdesc | slice:0:50}}</p>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,97 @@
+<section class="product-details-area soft-blue-bg section-gap" *ngFor="let item of shopdetails">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="product-gallery-wrap mb-md-gap-50">
+                    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="product-main-slider">
+                        <div ngxSlickItem class="image" *ngFor="let image of item.image">
+                            <img [src]="image" [alt]="item.title" class="w-100">
+                        </div>
+                    </ngx-slick-carousel>
+                    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settingsThumb"
+                        class="product-thumb-slider mt-30 row">
+                        <div ngxSlickItem class="image col" *ngFor="let image of item.image">
+                            <img [src]="image" [alt]="item.title">
+                        </div>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-summery">
+                    <div class="product-rating">
+                        <ul>
+                            <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true">
+                                <ng-template let-fill="fill" let-index="index">
+                                    <li>
+                                        <i class="fas fa-star" [class.active]="fill === 100"></i>
+                                    </li>
+                                </ng-template>
+                            </ngb-rating>
+                            <li><span>23 Reviews</span></li>
+                        </ul>
+                    </div>
+                    <span class="cat mr-1" *ngFor="let cat of getCategory(item.category)">{{cat.title}}</span>
+                    <h4 class="title">{{item.title}}</h4>
+                    <p class="price">${{item.price * (100 - item.discount) / 100 | number:'1.2-2'}} <del
+                            *ngIf="item.discount">${{item.price | number:'1.2-2'}}</del></p>
+                    <div class="product-meta">
+                        <ul>
+                            <li><span>Brands:</span> <a href="#">{{item.brand}}</a></li>
+                            <li><span>Product Code:</span> {{item.productcode}}</li>
+                            <li><span>Rewards Points:</span> {{item.reward | number:'1.0-0'}}</li>
+                            <li class="stock" *ngIf="item.stock"><span>Stock:</span> In Stock</li>
+                        </ul>
+                    </div>
+                    <p class="short-desc">{{item.shortdesc}}</p>
+                    <form class="cart-form">
+                        <div class="d-block d-sm-flex">
+                            <div class="product-quantity d-flex" id="quantity">
+                                <button type="button" id="sub" class="sub" (click)="decrement()">-</button>
+                                <input type="number" id="productQuantity" [value]="counter" min="1" />
+                                <button type="button" id="add" class="add" (click)="increment()">+</button>
+                            </div>
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fas fa-location-arrow"></i></a></li>
+                                <li><a href="#"><i class="fas fa-share-square"></i></a></li>
+                            </ul>
+                        </div>
+                        <button class="main-btn" type="button">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product-details-tab">
+            <ul ngbNav #nav="ngbNav" class="nav nav-pills" id="pills-tab" role="tablist">
+                <li [ngbNavItem]="1" class="nav-item">
+                    <a ngbNavLink>Item Review</a>
+                    <ng-template ngbNavContent>
+                        <h3 class="title">Technical Specifications</h3>
+                        <ul class="specifications-list">
+                            <li *ngFor="let data of item.specifications"><span>{{data.title}}</span> {{data.text}}</li>
+                        </ul>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2" class="nav-item">
+                    <a ngbNavLink>Descriptions</a>
+                    <ng-template ngbNavContent>
+                        <div class="shop-descriptions-area">
+                            <h3 class="title">Product Descriptions</h3>
+                            <div [innerHtml]="item.htmldesc"></div>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="3" class="nav-item">
+                    <a ngbNavLink>Methods</a>
+                    <ng-template ngbNavContent>
+                        <h3 class="title">Technical Methods</h3>
+                        <ul class="specifications-list">
+                            <li *ngFor="let data of item.methods"><span>{{data.title}}</span> {{data.text}}</li>
+                        </ul>
+                    </ng-template>
+                </li>
+            </ul>
+            <div [ngbNavOutlet]="nav"></div>
+        </div>
+    </div>
+</section>

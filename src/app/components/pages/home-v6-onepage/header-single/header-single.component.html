@@ -1,0 +1,32 @@
+<header class="header-four header-full-width sticky-header" [ngClass]="[windowScrolled ? 'sticky-on':'']">
+    <div class="header-navigation" [ngClass]="[visible ? '' : 'breakpoint-on']" (window:resize)="detectHeader()">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="header-left">
+                <div class="site-logo">
+                    <a routerLink="/">
+                        <img src="assets/img/logo-3.png" alt="logo" class="main-logo">
+                        <img src="assets/img/logo-2.png" alt="logo" class="sticky-logo">
+                    </a>
+                </div>
+            </div>
+            <div class="site-nav-menu" [ngClass]="navMethod ? 'menu-opened':''">
+                <ul class="primary-menu onepage-nav">
+                    <li class="current"><a pageScroll href="#home">Home</a></li>
+                    <li><a pageScroll href="#feature">Feature</a></li>
+                    <li><a pageScroll href="#portfolio">Portfolio</a></li>
+                    <li><a pageScroll href="#faq">Faq</a></li>
+                    <li><a pageScroll href="#contact">Contact</a></li>
+                </ul>
+                <a href="javascript:void(0)" class="nav-close" (click)="toggleNav()"><i class="fal fa-times"></i></a>
+            </div>
+            <div class="header-extra d-flex align-items-center">
+                <div class="nav-toggler" [ngClass]="navMethod ? 'menu-opened':''" (click)="toggleNav()">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="navbar-btn">
+                    <a routerLink="/contact">Get A Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

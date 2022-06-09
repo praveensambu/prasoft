@@ -1,0 +1,62 @@
+<header class="header-one header-full-width sticky-header" [ngClass]="[windowScrolled ? 'sticky-on':'']">
+    <div class="header-topbar d-none d-sm-block">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-auto col-12">
+                    <ul class="contact-info text-center">
+                        <li><a href="#"><i class="fal fa-envelope"></i> Hr@allytechsol.com</a></li>
+                        <li><a href="#"><i class="fal fa-phone"></i> 312-248-3364</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-auto col-12">
+                    <div class="social-icon text-center">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-navigation" [ngClass]="[visible ? '' : 'breakpoint-on']" (window:resize)="detectHeader()">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="header-left">
+                <div class="site-logo">
+                    <a routerLink="/">
+                        <img src="assets/img/logo.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="header-right d-flex align-items-center justify-content-end">
+                <div class="site-nav-menu" [ngClass]="navMethod ? 'menu-opened':''">
+                    <ul class="primary-menu onepage-nav">
+                        <li class="current"><a pageScroll href="#home">Home</a></li>
+                        <li><a pageScroll href="#service">Services</a></li>
+                        <li><a pageScroll href="#portfolio">Portfolio</a></li>
+                        <li><a pageScroll href="#team">Teams</a></li>
+                        <li><a pageScroll href="#news">News</a></li>
+                    </ul>
+                    <a href="javascript:void(0)" class="nav-close" (click)="toggleNav()"><i class="fal fa-times"></i></a>
+                </div>
+                <div class="header-extra d-flex align-items-center">
+                    
+                    <div class="offcanvas-widget d-lg-block d-none">
+                        <div class="offcanvas-icon">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="nav-toggler" [ngClass]="navMethod ? 'menu-opened':''" (click)="toggleNav()">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="navbar-btn">
+                        <a routerLink="/contact">Free Consulting <i class="fal fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

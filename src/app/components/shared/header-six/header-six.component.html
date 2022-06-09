@@ -1,0 +1,50 @@
+<header class="header-four header-full-width sticky-header" [ngClass]="[windowScrolled ? 'sticky-on':'']">
+    <div class="header-navigation" [ngClass]="[visible ? '' : 'breakpoint-on']" (window:resize)="detectHeader()">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="header-left">
+                <div class="site-logo">
+                    <a routerLink="/">
+                        <img src="assets/img/logo-3.png" alt="logo" class="main-logo">
+                        <img src="assets/img/logo-2.png" alt="logo" class="sticky-logo">
+                    </a>
+                </div>
+            </div>
+            <div class="site-nav-menu" [ngClass]="navMethod ? 'menu-opened':''">
+                <ul class="primary-menu">
+                    <!-- Data -->
+                    <li [ngClass]="item.child ? 'menu-item menu-item-has-children':'menu-item'" *ngFor="let item of navigation">
+                        <a href="javascript:void(0)" *ngIf="item.child" (click)="trigger(item)">{{item.linkText}}</a>
+                        <span class="dd-trigger" [ngClass]="item.open ? 'open' : ''" *ngIf="item.child" (click)="trigger(item)">
+                            <i class="fal" [ngClass]="item.open ? 'fa-minus' : 'fa-plus'"></i>
+                        </span>
+                        <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                        <ul class="submenu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
+                            <li [ngClass]="item.child ? 'menu-item menu-item-has-children':'menu-item'" *ngFor="let item of item.submenu">
+                                <a href="javascript:void(0)" *ngIf="item.child" (click)="trigger(item)">{{item.linkText}}</a>
+                                <span class="dd-trigger" [ngClass]="item.open ? 'open' : ''" *ngIf="item.child" (click)="trigger(item)">
+                                    <i class="fal" [ngClass]="item.open ? 'fa-minus' : 'fa-plus'"></i>
+                                </span>
+                                <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                <ul class="submenu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
+                                    <li [ngClass]="item.child ? 'menu-item menu-item-has-children':'menu-item'" *ngFor="let item of item.submenu">
+                                        <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Data -->
+                </ul>
+                <a href="javascript:void(0)" class="nav-close" (click)="toggleNav()"><i class="fal fa-times"></i></a>
+            </div>
+            <div class="header-extra d-flex align-items-center">
+                <div class="nav-toggler" [ngClass]="navMethod ? 'menu-opened':''" (click)="toggleNav()">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="navbar-btn">
+                    <a routerLink="/contact">Get A Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

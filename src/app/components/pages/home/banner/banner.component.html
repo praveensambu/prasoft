@@ -1,0 +1,33 @@
+<ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" (init)="slickInit($event)" (beforeChange)="beforeChange($event)" class="banner-slider banner-slider-one banner-slider-active">
+    <!-- Data -->
+    <div ngxSlickItem class="single-banner" *ngFor="let item of banner">
+        <div class="container-fluid container-1470">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="banner-text">
+                        <div class="banner-content">
+                            <span data-animation="fadeInUp" data-delay="0.3s" class="title-tag">
+                                {{item.subtitle}}
+                            </span>
+                            <h1 data-animation="fadeInLeft" data-delay="0.6s" class="title">
+                                {{item.title}}
+                            </h1>
+                            <p data-animation="fadeInLeft" data-delay=".9s">
+                                {{item.text}}
+                            </p>
+                            <a routerLink="/services" data-animation="fadeInUp" data-delay="1.1s" class="main-btn rounded-btn icon-right small-size">
+                                Our Services <i class="fal fa-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="banner-img" data-animation="fadeInRight" data-delay="0.5s">
+                        <img [src]="item.img" [alt]="item.title">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Data -->
+</ngx-slick-carousel>

@@ -1,0 +1,13 @@
+<section class="counter-section secondary-bg pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.3s" *ngFor="let item of counterblock;let i = index">
+                <div class="counter-box color-{{1+i}}" [ngClass]="item.id === 2 ? 'mt-40 mb-xs-gap-40':'' || item.id === 4 ? 'mt-40':''">
+                    <div class="icon"><i [class]="item.icon"></i></div>
+                    <span class="counter">{{item.value}}</span>
+                    <h6 class="title">{{item.title}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

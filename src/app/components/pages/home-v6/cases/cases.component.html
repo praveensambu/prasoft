@@ -1,0 +1,28 @@
+<section class="portfolio-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8 col-sm-10">
+                <div class="section-title-two text-center mb-50">
+                    <span class="title-tag">Portfolio</span>
+                    <h2 class="title">We Have Done So Much Stuffs </h2>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-items justify-content-center row">
+            <!-- Data -->
+            <div class="col-lg-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.8s" *ngFor="let item of case | slice:0:6">
+                <div class="portfolio-item-two mt-30">
+                    <div class="portfolio-img" [style.background-image]="'url('+item.img+')'"> </div>
+                    <div class="portfolio-content">
+                        <span class="category" *ngFor="let category of getCategory(item.category) | slice:0:1">{{category.title}}</span>
+                        <h5 class="title"><a routerLink="/case-details/{{item.id}}">{{item.title}} </a></h5>
+                        <p>
+                            {{item.shortdesc | slice:0:100}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Data -->
+        </div>
+    </div>
+</section>

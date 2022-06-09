@@ -1,0 +1,64 @@
+<section class="shoping-cart-area soft-blue-bg section-gap">
+    <div class="container">
+        <div class="cart-table table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Unit Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data -->
+                    <tr *ngFor="let item of cartItem | slice:0:5">
+                        <td class="product-thumbnail">
+                            <a routerLink="/shop-details/{{item.id}}">
+                                <img [src]="item.image[0]" [alt]="item.title">
+                            </a>
+                        </td>
+                        <td class="product-name"><a routerLink="/shop-details/{{item.id}}">{{item.title}}</a></td>
+                        <td class="product-price-cart"><span class="amount">${{item.price | number:'1.2-2'}}</span></td>
+                        <td class="product-quantity">
+                            <input type="number" value="1">
+                        </td>
+                        <td class="product-subtotal">${{item.price | number:'1.2-2'}}</td>
+                        <td class="product-remove">
+                            <a href="#"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                    <!-- Data -->
+                </tbody>
+            </table>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6 col-md-8">
+                <div class="shopping-coupon-code">
+                    <input type="text" placeholder="Coupon code" name="coupon-code">
+                    <button class="main-btn">Apply Coupon</button>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="button-box">
+                    <button type="button" class="main-btn">Update Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="cart-total-box">
+                    <h3 class="title">Cart Totals</h3>
+                    <ul class="list">
+                        <li>Subtotal <span>$800.00</span></li>
+                        <li>Shipping <span>$30.00</span></li>
+                        <li>Total <span>$830.00</span></li>
+                    </ul>
+                    <a routerLink="/checkout" class="main-btn">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
